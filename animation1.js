@@ -267,7 +267,7 @@ function showPreview(ranshape){
 
 //游戏结束动画
 function showGameOver(){
-    if(confirm('是否重新开始')){
+    if(confirm('分数: ' + score + '\n是否重新开始?')){
         clearInterval(gameLoopInterval);
         clearTimeout(touchInterval);
         gameStatus = 1;
