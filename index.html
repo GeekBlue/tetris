@@ -20,7 +20,13 @@
         您的浏览器不支持canvas!
     </canvas>
     <script>
-       const audioctx = new AudioContext()
+       var constructor
+       if (typeof AudioContext === 'function') {
+           constructor = AudioContext
+       } else if (typeof webkitAudioContext === 'function') {
+            constructor = webkitAudioContext
+        }
+       const audioctx = new constructor()
        console.log('audioctx.state=', audioctx.state)
     </script>
 </body>
